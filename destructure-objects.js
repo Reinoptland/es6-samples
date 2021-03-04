@@ -106,7 +106,7 @@ const rocketLaunch = {
 };
 
 const {
-  mission_name,
+  mission_name: puppy,
   flight_number,
   rocket: { fairings, rocket_name },
   launch_site,
@@ -114,7 +114,7 @@ const {
 } = rocketLaunch;
 
 console.log(`
-LATEST SPACEX LAUNCH: 
+LATEST SPACEX LAUNCH:
 
 Mission: ${rocketLaunch.mission_name}
 Flight number: ${flight_number}
@@ -123,6 +123,13 @@ Was this a reused rocket? ${fairings.reused}
 Launch site: ${launch_site.site_name_long}
 ${launch_success ? "Elon had a good day" : "Elon was sad"}
 `);
+
+// const name = rocketLaunch.puppy.name; // undefined.name
+// const {
+//   puppy: { name },
+// } = rocketLaunch;
+
+// console.log("WHAT WILL THIS BE?", name); // leeg object, error?
 
 // const { firstName, lastName, favoriteColor } = props;
 
