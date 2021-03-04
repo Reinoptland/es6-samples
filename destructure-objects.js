@@ -1,4 +1,4 @@
-const launch = {
+const rocketLaunch = {
   flight_number: 109,
   mission_name: "Starlink-15 (v1.0)",
   mission_id: [],
@@ -105,13 +105,28 @@ const launch = {
   crew: null,
 };
 
+const {
+  mission_name,
+  flight_number,
+  rocket: { fairings, rocket_name },
+  launch_site,
+  launch_success,
+} = rocketLaunch;
+
 console.log(`
 LATEST SPACEX LAUNCH: 
 
-Mission: ${launch.mission_name}
-Flight number: ${launch.flight_number}
-Rocket: ${launch.rocket.rocket_name}
-Was this a reused rocket? ${launch.rocket.fairings.reused}
-Launch site: ${launch.launch_site.site_name_long}
-${launch.launch_success ? "Elon had a good day" : "Elon was sad"}
+Mission: ${rocketLaunch.mission_name}
+Flight number: ${flight_number}
+Rocket: ${rocket_name}
+Was this a reused rocket? ${fairings.reused}
+Launch site: ${launch_site.site_name_long}
+${launch_success ? "Elon had a good day" : "Elon was sad"}
 `);
+
+// const { firstName, lastName, favoriteColor } = props;
+
+// console.log(`
+//   ${firstName} ${lastName}
+//   ${favoriteColor}
+// `);
