@@ -3,17 +3,35 @@ let pet = {
   hungryLevel: 10,
 }; // Object datatype: Object, Array
 
-// Maak ik nu een kopie?
-let petEvilTwin = pet;
+// Dit maakt een reference
+// let petEvilTwin = pet;
 
+// Zo maak je een kopie
+// let petEvilTwin = {
+//   name: pet.name,
+//   hungryLevel: pet.hungryLevel,
+// };
+
+// Zo maak je een kopie -> spread operator
+let petEvilTwin = { ...pet };
+
+// meest intuitief
 pet.name = "vlekkie";
 
 function feedPet(pet, food) {
   if (food === "banana") {
     // side-effect
-    pet.hungryLevel = 0;
+    // pet.hungryLevel = 0;
+
+    // const petCopy = {
+    //   name: pet.name,
+    //   hungryLevel: 0,
+    // };
+
+    const petCopy = { ...pet, hungryLevel: 0 };
+
+    return petCopy;
   }
-  return pet;
 }
 
 const notSoHungryPet = feedPet(pet, "banana");
